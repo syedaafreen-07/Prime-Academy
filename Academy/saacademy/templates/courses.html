@@ -1,0 +1,24 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/maincourse.css' %}">
+ {% endblock %}
+{% block body %}
+<section class="course1">
+    <h1>Courses We Offer</h1>
+    <p>"Code Your Way to Success: Expert Coding Tips and Resources"</p>
+
+    <div class="row1">
+        {% for course in courses %}
+        <div class="course-col1">
+            <img src="{{ course.image.url }}" alt="{{ course.name }}">
+            <h3>{{ course.name }}</h3>
+            <!-- <p>{{ course.description }}</p> -->
+            <p>Price: {{ course.price }} INR</p>
+            <a class="hero-btn red-btn" href="/enroll/{{course.sno}}" >Enroll</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

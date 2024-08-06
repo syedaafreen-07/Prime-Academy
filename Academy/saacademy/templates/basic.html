@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="./css/phone.css"> -->
+    <script src="https://kit.fontawesome.com/585bc2d4a8.js" crossorigin="anonymous"></script>
+    {% block css %} {% endblock %}
+    <title>PrimeAcademy</title>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="">PrimeAcademy</a>
+        
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="/home/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/courses/">Course</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/contact/">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    </section>
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% block body %}{% endblock %}
+
+    <section class="footer">
+        <h3>About Us</h3>
+        <p>"We are a team of dedicated educators committed to providing innovative, accessible, and impactful learning experiences for learners of all backgrounds and abilities."</p>
+        <div class="icons">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-twitter"></i>
+        </div>
+        <!-- <p>Made with <i class=" red fa-solid fa-heart"></i> by  <i class="o fa-solid fa-s"></i><i class="o fa-solid fa-a"></i></p> -->
+    </section>
+    <!-- toogle -->
+    <script>
+        var navLinks = document.getElementById('navLinks');
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-255px"
+        }
+
+        setTimeout(()=>{
+		document.querySelector('.messages').style.display = 'none';
+	},4000)
+    </script>
+</body>
+</html>
