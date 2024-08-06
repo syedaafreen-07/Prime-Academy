@@ -1,0 +1,38 @@
+.row1 {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around;
+  }
+  
+  .course-col1 {
+    margin: 1rem; 
+    text-align: center; 
+    background-color: #f5f5f5; 
+    border-radius: 5px; 
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s ease-in-out; 
+    width: calc(33% - 2rem); 
+  }
+
+  .course1 h1,.course1 p{
+    text-align: center;
+  }
+  
+  .course-col1:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+  }
+  
+  .course-col1 h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .course-col1 img {
+    max-width: 100%; 
+    height: auto; 
+    margin-bottom: 0.5rem;
+  }
+  

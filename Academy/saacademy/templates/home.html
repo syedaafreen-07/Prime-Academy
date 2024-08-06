@@ -1,0 +1,194 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+    <!-- <link rel="stylesheet" href="./css/phone.css"> -->
+    <script src="https://kit.fontawesome.com/585bc2d4a8.js" crossorigin="anonymous"></script>
+    <title>PrimeAcademy</title>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href=""></a>
+        
+        <div class="nav-links" id="navLinks">
+            <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="/index/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/courses/">Course</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/contact/">Contact Us</a></li>
+            </ul>
+            <div class="io">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="text-box">
+        <h1>PrimeAcademy</h1>
+        <p>"Mastering the Art of Coding: Learn to Code from Beginner to Pro"</p>
+        <h3>Read Evaluate Print Loop</h3>
+        <a href="#cap" class="hero-btn">Visit Us to Know More</a>
+    </div>
+    </section>
+
+    <!-- course -->
+
+    <section class="course">
+        <h1>Courses We Offer</h1>
+        <p>"Code Your Way to Success: Expert Coding Tips and Resources"</p>
+
+        <div class="row">
+            <div class="course-col">
+                <h3>C++</h3>
+                <p>"Discover the world of C++ programming with our comprehensive course. Learn fundamental programming concepts and tools like Visual Studio to build your own programs from scratch."</p>
+            </div>
+            <div class="course-col">
+                <h3>Python</h3>
+                <p>"Unlock the power of Python with our comprehensive course. Learn to code and build real-world applications using Python's versatile syntax and wide range of libraries and frameworks."
+                </p>
+                
+            </div>
+            <div class="course-col">
+                <h3>JavaScript</h3>
+                <p>"Take your web development skills to the next level with our comprehensive JavaScript course. Learn to create dynamic, interactive websites and web applications using this popular scripting language."</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- campus -->
+    <section class="campus" id="cap">
+        <h1>Our Global Campus</h1>
+        <p>"Explore the World with Our Global Campus: Connect, Learn, and Grow with Diverse Communities".</p>
+        <div class="row">
+            <div class="campus-col">
+                <img src='{% static "images/im4.avif" %}' alt="">
+                <div class="layer">
+                    <h3>LONDON</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src='{% static "images/im10.avif" %}' alt="">
+                <div class="layer">
+                    <h3>NEW YORK</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src='{% static "images/im3.avif" %}' alt="">
+                <div class="layer">
+                    <h3>DUBAI</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- facilities -->
+    <section class="fac">
+        <h1>Our Facilities</h1>
+        <p>"Experience the Best in Class: Discover Our State-of-the-Art Facilities for Learning, Collaboration, and Innovation"</p>
+        <div class="row">
+            <div class="fac-col">
+                <img src='{% static "images/im5.avif" %}' alt="">
+                <h3>World Class Library</h3>
+                <p>"Explore endless possibilities with our library. Immerse yourself in books, research, and learning resources. Our expert staff is ready to assist you in your quest for knowledge."</p>
+            </div>
+            <div class="fac-col">
+                <img src='{% static "images/im6.avif" %}' alt="">
+                <h3>Best Computer Lab</h3>
+                <p>"Experience innovation at its finest in our computer lab. Access cutting-edge technology and software to develop new skills and enhance your learning."</p>
+            </div>
+            <div class="fac-col">
+                <img src='{% static "images/im2.jpg"  %}'alt="">
+                <h3>Good Infrastructure</h3>
+                <p>"Discover a seamless learning experience with our top-notch infrastructure. From modern classrooms to reliable technology, we provide the resources you need to excel in your studies."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- testimonials -->
+    <sectiom class="test">
+        <h1>Student's Reviews</h1>
+        <p>"Hear from Our Satisfied Learners: Inspiring Stories of Success and Growth with Our Programs</p>
+
+        <div class="row">
+            <div class="test-col">
+                <img src='{% static "images/shashi.jpg" %}' alt="">
+                <div>
+                    <p>"I couldn't have asked for a better learning experience. The program was well-structured, the instructors were knowledgeable, and the resources were top-notch. Highly recommended!"</p>
+                    <h3>Shashi</h3>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                   
+                </div>
+            </div>
+            <div class="test-col">
+                <img src='{% static "images/Aiman.jpg"  %}'alt="">
+                <div>
+                    <p>"I'm amazed at how much I've grown since starting this program. The curriculum was challenging, but the support from the staff and my fellow learners made it all worthwhile. Thank you!"</p>
+                    <h3>Aiman</h3>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+            </div>
+        </div>
+    </sectiom>
+
+    <!-- Contact -->
+    <section class="cta">
+        <h1>Enroll for our Various Online Courses <br>Anywhere From the World</h1>
+        <a href="/contact/" class="hero-btn">Contact Us</a>
+    </section>
+
+    <!-- footer -->
+    <section class="footer">
+        <h3>About Us</h3>
+        <p>"We are a team of dedicated educators committed to providing innovative, accessible, and impactful learning experiences for learners of all backgrounds and abilities."</p>
+        <div class="icons">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-twitter"></i>
+        </div>
+        <!-- <p>Made with <i class=" red fa-solid fa-heart"></i> by SA <i class="o fa-solid fa-s"></i><i class="o fa-solid fa-a"></i></p> -->
+    </section>
+    <!-- toogle -->
+    <script>
+        var navLinks = document.getElementById('navLinks');
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-255px"
+        }
+
+	setTimeout(()=>{
+		document.querySelector('.messages').style.display = 'none';
+	},4000)
+
+    </script>
+</body>
+</html>
